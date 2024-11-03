@@ -12,7 +12,7 @@
             justify-content: center;
             height: 100vh;
             margin: 0;
-            background-color: #f0f8ff;
+            background-color: #8fbbe2;
         }
         .container {
             text-align: center;
@@ -61,12 +61,17 @@
         }
     </style>
 </head>
+
 <body>
 
 <div class="container">
     <img src="image.jpg" alt="Team Logo">
+    <div class="publi-message">
+        Hello Asp. Volunteers
+    </div>
     <div class="intro-message">
-        We're thrilled to see you here! We know you’ve gone through the application process and successfully completed the interview stage. Below are your selection results
+        We're thrilled to see you here! We know you’ve gone through the application process and successfully completed the interview stage. 
+        Below are your selection results
     </div>
     <input type="text" id="rollNumber" placeholder="Enter your roll number">
     <button onclick="checkSelection()">Check</button>
@@ -76,14 +81,25 @@
 <script>
     function checkSelection() {
         const selectedRollNumbers = ["CH24B111", "CH24B150"];
+        const alreadyRollNumbers = ["CH21B095", "CH22B060"];
+        const blankRollNumbers = [""];
         const rollNumber = document.getElementById("rollNumber").value.trim().toUpperCase();
         const messageElement = document.getElementById("message");
 
-        if (selectedRollNumbers.includes(rollNumber)) {
-            messageElement.textContent = "Hey, you are selected to our team!";
+        if (blankRollNumbers.includes(rollNumber)) {
+            messageElement.textContent = "Hey, Enter Your Roll No.";
+            messageElement.style.color = "black";
+        }
+        else if (selectedRollNumbers.includes(rollNumber)) {
+            messageElement.textContent = "Congratulations! We're excited to welcome you to our team!";
             messageElement.style.color = "green";
-        } else {
-            messageElement.textContent = "Hey, you are not selected to our team!";
+        } 
+        else if (alreadyRollNumbers.includes(rollNumber)) {
+            messageElement.textContent = "Hey, you’re already part of this team; you just can’t see it!";
+            messageElement.style.color = "blue";
+        }
+        else {
+            messageElement.textContent = "We’re sorry, but you were not selected to join our team this time. Thank you for your interest!";
             messageElement.style.color = "red";
         }
     }
