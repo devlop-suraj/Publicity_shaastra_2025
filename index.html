@@ -21,7 +21,18 @@
             border-radius: 8px;
             background-color: #fff;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            max-width: 300px;
+            max-width: 350px;
+        }
+        .container img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+        .intro-message {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 20px;
         }
         input[type="text"] {
             width: 80%;
@@ -53,7 +64,11 @@
 <body>
 
 <div class="container">
-    <h2>Check Team Selection</h2>
+    <img src="image.jpg" alt="Team Logo">
+    <div class="intro-message">
+        Hey Asp Volunteers, happy to see you here! I know you went through the application process and finally the interview.
+        Below is your selection result:
+    </div>
     <input type="text" id="rollNumber" placeholder="Enter your roll number">
     <button onclick="checkSelection()">Check</button>
     <div class="message" id="message"></div>
