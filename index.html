@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Selection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f8ff;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 300px;
+        }
+        input[type="text"] {
+            width: 80%;
+            padding: 8px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 4px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .message {
+            margin-top: 15px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Check Team Selection</h2>
+    <input type="text" id="rollNumber" placeholder="Enter your roll number">
+    <button onclick="checkSelection()">Check</button>
+    <div class="message" id="message"></div>
+</div>
+
+<script>
+    function checkSelection() {
+        const selectedRollNumbers = ["CH24B111", "CH24B150"];
+        const rollNumber = document.getElementById("rollNumber").value.trim().toUpperCase();
+        const messageElement = document.getElementById("message");
+
+        if (selectedRollNumbers.includes(rollNumber)) {
+            messageElement.textContent = "Hey, you are selected to our team!";
+            messageElement.style.color = "green";
+        } else {
+            messageElement.textContent = "Hey, you are not selected to our team!";
+            messageElement.style.color = "red";
+        }
+    }
+</script>
+
+</body>
+</html>
